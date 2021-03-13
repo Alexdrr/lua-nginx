@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+
+    volumes: 
+      - ./conf.d:/etc/nginx/conf.d  
