@@ -106,7 +106,7 @@ RUN curl https://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz -o nginx-${NGI
     make && make install
 
 ARG DEBIAN_VERSION='9'
-FROM debian:${DEBIAN_VERSION}
+FROM debian:${DEBIAN_VERSION}-slim
 WORKDIR /root/    
 COPY --from=builder /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu
 COPY --from=builder /etc/nginx /etc/nginx
